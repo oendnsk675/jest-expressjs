@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "cozy190900",
+    "database": "tasktodo_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "cozy190900",
+    "database": "tasktodo_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "cozy190900",
+    "database": "tasktodo_production",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "rejectUnauthorized": false
+      }
+    }
+  }
+}
