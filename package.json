@@ -4,7 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
+    "test": "cross-env NODE_ENV=test jest --forceExit",
+    "test-coverage": "cross-env NODE_ENV=test jest --forceExit --coverage",
+    "pretest": "cross-env NODE_ENV=test npm run db:reset",
+    "db:create:test": "cross-env NODE_ENV=test npx sequelize-cli db:create",
     "serve": "nodemon server.js",
     "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
   },
@@ -12,20 +15,23 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sequelize/core": "^7.0.0-alpha.10",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.2",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "jest": "^27.5.1",
     "jsonwebtoken": "^8.5.1",
-    "morgan": "^1.10.0",
     "pg": "^8.7.3",
-    "sequelize": "^6.17.0",
-    "supertest": "^6.2.2"
+    "sequelize": "^6.17.0"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.4.1"
+    "@faker-js/faker": "^6.1.1",
+    "is-any-type": "0.0.4",
+    "jest": "^27.5.1",
+    "morgan": "^1.10.0",
+    "sequelize-cli": "^6.4.1",
+    "supertest": "^6.2.2"
   }
 }
