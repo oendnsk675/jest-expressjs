@@ -8,7 +8,10 @@ const UserController = require('./app/Controllers/user.controller.js')
 
 app.use(cors())
 app.use(bodyParser.json())
-// app.use(logger('dev'))
+
+// uncoment this for see the log requests
+// app.use(logger('dev')) 
+
 const default_router = `/api/${process.env.APP_VERSION}`
 require('./app/Routes')(express, app, default_router)
 
