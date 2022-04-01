@@ -102,12 +102,11 @@ const getDetailUser = async (req, res) => {
 const updateUser = async (req, res) => {
     try {
         const {id} = req.params
-        const data = await User.update(req.body, {
+        await User.update(req.body, {
             where: {id}
         })
         return res.status(200).json({
-            msg: "Success update detail user.",
-            data
+            msg: "Success update detail user."
         })
     } catch (error) {
         return res.status(500).json({
