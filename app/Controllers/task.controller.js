@@ -4,7 +4,7 @@ const createTask = async (req, res) => {
     try {
         const data = await Task.create(req.body)
         return res.status(201).json({
-            msg: "Success create task",
+            msg: "Successfully create new task",
             data
         })   
     } catch (error) {
@@ -17,12 +17,11 @@ const createTask = async (req, res) => {
 const updateTask = async (req, res) => {
     try {
         const {id} = req.params
-        const data = await Task.update(req.body, {
+        await Task.update(req.body, {
             where: {id}
         })
         return res.status(201).json({
-            msg: "Success updated task",
-            data
+            msg: "Success updated task"
         })
     } catch (error) {
         return res.status(500).json({
@@ -40,7 +39,7 @@ const getAllTask = async (req, res) => {
                 }
             ]
         })
-        return res.status(201).json({
+        return res.status(200).json({
             msg: "Success retrieve the task",
             data
         })
@@ -57,7 +56,7 @@ const getDetailTask = async (req, res) => {
         const data = await Task.findOne({
             where: {id}
         })
-        return res.status(201).json({
+        return res.status(200).json({
             msg: "Success retrieve detail task",
             data
         })
@@ -76,9 +75,8 @@ const deleteTask = async (req, res) => {
         })
 
         if (data) {
-            return res.status(201).json({
-                msg: "Successfully delete task",
-                data
+            return res.status(200).json({
+                msg: "Successfully delete task"
             })
         }
 

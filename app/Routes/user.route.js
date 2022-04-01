@@ -1,7 +1,8 @@
 const UserController = require('../Controllers/user.controller.js')
 const {verifyToken} = require('../middlewares/auth.jwt')
+require('dotenv').config()
 
-module.exports = (express, app) => {
+module.exports = (express, app, default_router = '/api') => {
     const router = express.Router()
 
     // auth
@@ -13,5 +14,5 @@ module.exports = (express, app) => {
     router.get('/users/:id', [verifyToken], UserController.getDetailUser)
     router.put('/users/:id', [verifyToken], UserController.updateUser)
 
-    app.use('/api', router)
+    app.use(default_router, router)
 }

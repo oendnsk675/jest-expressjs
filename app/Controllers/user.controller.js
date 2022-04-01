@@ -24,9 +24,8 @@ const signIn = async (req, res) => {
     try {
         const user = await User.findOne({
             where: {email: req.body.email}
-        })
+        })  
             .then(user => {
-                // console.log(user);
                 if (user) {
                     let checkPassword = bcrypt.compareSync(req.body.password, user.password)
 
