@@ -35,6 +35,12 @@ then we run our seeder which is in `./app/seeders`, so that there is our initial
 npx sequelize-cli db:seed:all
 ```
 
+and we run the server so that it can be tested on postman or using insomnia
+```sh
+npm run serve
+```
+
+
 ## For Testing
 First, we create a database for testing
 ```sh
