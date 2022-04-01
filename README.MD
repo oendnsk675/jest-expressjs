@@ -1,6 +1,6 @@
 # Express with jest testing
 
-The following is an example of using ExpressJs, Sequalize(ORM) using PostgreSQL as the database, then you can take a reference if you are just starting to migrate to express, this template includes middleware for authorization and authentication.
+The following is an example of using ExpressJs, Sequelize(ORM) using PostgreSQL as the database, then you can take a reference if you are just starting to migrate to express, this template includes middleware for authorization and authentication.
 In this project I also include an example of integrated testing, using JEST and Supertest, which you can learn about that.
 
 
